@@ -40,6 +40,7 @@ jobs:
 
   validation:
     name: Validate Gradle Wrapper
+    needs: setup-java
     runs-on: self-hosted
     steps:
       - uses: gradle/actions/wrapper-validation@v4
@@ -47,7 +48,7 @@ jobs:
 
   trivy-fs-scan:
     runs-on: self-hosted
-    needs: setup-go
+    needs: validation
     steps:
       - name: Trivy FS scan
         run: |
