@@ -1,4 +1,4 @@
-name: java lang
+name: java CI
 
 env:
   APP_NAME: adservice
